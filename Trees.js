@@ -20,6 +20,7 @@ var isSameTree = function(p, q) {
    Write a function that takes a binary tree and returns an array of its branch sums ordered 
    from leftmost branch sum to rightmost branch sum. A branch sum is the sum of all the 
    values in a Binary Tree branch, extending from the root node to a leaf node.
+   Time Complexity: O(n), Space Complexity: O(1).
 */
 function branchSums(node, sums = [], runningTotal = 0) {
    // Process the node: add its value to our running total for this branch
