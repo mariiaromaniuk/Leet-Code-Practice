@@ -96,6 +96,17 @@ var search = function(nums, target) {
     if (nums[i] > nums[i+1])
       mid = i;
   }
+   
+  // Using Binary search to find the 'array break':
+  // while (left < right) {
+  //   mid = Math.floor(nums.length / 2);
+  //   if (nums[mid] > nums[mid + 1])
+  //     break;
+  //   else if (nums[mid] < nums[left])
+  //     right = mid - 1;
+  //   else if (nums[mid] > nums[left])
+  //     left = mid + 1;
+  // }
     
   if (target === nums[mid])
     return mid;
