@@ -81,6 +81,42 @@ function isPalindrome(node) {
 
 // ---------------------------------------------------------------------------------------- //
 /*
+   Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
+   (i.e., [0,1,2,4,5,6,7] might become [4,5,6,7,0,1,2]). You are given a target value to search. 
+   If found in the array return its index, otherwise return -1. You may assume no duplicate exists 
+   in the array. Your algorithm's runtime complexity must be in the order of O(log n).
+*/
+
+var search = function(nums, target) {
+    let left = 0;
+    let right = nums.length-1;
+    
+    while (left <= right) {
+        // beter than (right + left) / 2, because it can be a very large number, overflow
+        const mid = Math.floor((right - left) / 2) + left; 
+        if (nums[mid] === target)
+            return mid;
+        // if there is no array break in this half
+        if (nums[left] < nums[mid]) {
+            if (target >= nums[left] && target < nums[mid])
+                right = mid - 1;
+            else
+                left = mid + 1;
+        } 
+        // if there is a break in this half
+        else {
+            if (target > nums[mid] && target <= nums[right])
+                left = mid + 1;
+            else
+                right = mid - 1;
+        }
+    }
+    return -1;
+};
+
+
+// ---------------------------------------------------------------------------------------- //
+/*
    Given a sorted (in ascending order) integer array nums of n elements and a target value, 
    write a function to search target in nums. If target exists, then return its index, 
    otherwise return -1.
