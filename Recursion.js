@@ -5,7 +5,7 @@
    numbers that preceed it. For example, the first 10 Fibonacci numbers are:
    Number:      1   2   3   4   5   6   7   8   9   10  etc.
    Fib Number:  0,  1,  1,  2,  3,  5,  8,  13, 21, 34, etc.
-/*
+*/
 
 // Time Complexity: O(2^n), Space Complexity: O(n).
 function fib(num) {
@@ -70,7 +70,7 @@ const matrix = [
   [1, 0, 1, 1, 0]
 ]
 riverSizes(matrix)  //should return [1, 2, 2, 2, 5]
-/*
+*/
 
 function riverSizes(matrix) {
 	const sizes = [];
