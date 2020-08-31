@@ -270,3 +270,23 @@ function validSolution (solution){
   }
   return true;
 }
+
+
+// ---------------------------------------------------------------------------------------- //
+/*
+   Write a function to check if given integer is a palindrome without using integer.toString().
+   Time Complexity: O(n), Space Complexity: O(1).
+*/
+function isPalindrome(num){
+  let arr = [];
+
+  while(num){
+    arr.push(num % 10);
+    num = Math.floor(num/10);
+  }
+
+  for (let i = 0; i < Math.floor(arr.length/2); i++){
+    if (arr[i] !== arr[arr.length-1-i]) return false;
+  }
+  return true;
+}
