@@ -38,8 +38,8 @@ function recursiveMerge(p1, p2, prev) {
     prev.next = p2;
     return;
   }
-  if (p2 === null) return;
-
+  if (p2 === null) 
+    return;
   if (p1.val < p2.val){
     recursiveMerge(p1.next, p2, p1);
   } else {
