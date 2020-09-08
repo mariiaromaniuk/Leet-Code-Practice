@@ -46,7 +46,6 @@ function sudokuValidator(solution) {
 
 // OPTION 2
 function sudokuValidator(solution){
-
   // helper function - checks validity
   function check(arr){
     // default sort is ascending - converts elements to strings, then compares via UTF-16 values
@@ -69,7 +68,7 @@ function sudokuValidator(solution){
     for (let j = 0; j < 9; j++){
       // push in our column (switching j + i will get the column)
       col.push(solution[j][i]);
-      
+       
       // same goes here, except pushing in the row
       row.push(solution[i][j]);
       
