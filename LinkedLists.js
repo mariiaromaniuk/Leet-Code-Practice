@@ -34,16 +34,17 @@ function mergeTwoLists(l1, l2) {
 }
 
 function recursiveMerge(p1, p2, prev) {
-  if (p1 === null) {
+  if (!p1) {
     prev.next = p2;
     return;
   }
-  if (p2 === null) 
-    return;
+  if (!p2) return;
+
   if (p1.val < p2.val){
     recursiveMerge(p1.next, p2, p1);
   } else {
-    if (prev !== null) prev.next = p2;
+    if (prev) 
+      prev.next = p2;
     const newP2 = p2.next;
     p2.next = p1;
     recursiveMerge(p1, newP2, p2);
