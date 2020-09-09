@@ -1,5 +1,5 @@
 // Sort an alphanumeric string such that the positions of alphabets 
-// and numbers remain unchanged(ex: “dc42a31b” -> “ab12c34d”).
+// and numbers remain unchanged (ex: “dc42a31b” -> “ab12c34d”).
 
 // Time: O(n), Space: O(n)
 function stringManipulation(str){
