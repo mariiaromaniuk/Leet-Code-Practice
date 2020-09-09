@@ -1,5 +1,5 @@
-// Given a string with both numbers and letters (ex: “dc42a31b”), sort the letters and the numbers. 
-// Letters need to stay in letter positions and numbers need to stay in number positions (ex: “ab12c34d”).
+// Sort an alphanumeric string such that the positions of alphabets 
+// and numbers remain unchanged(ex: “dc42a31b” -> “ab12c34d”).
 
 // Time: O(n), Space: O(n)
 function stringManipulation(str){
