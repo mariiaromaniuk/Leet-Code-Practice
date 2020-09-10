@@ -16,13 +16,10 @@ function stringManipulation(str){
   }
   
   for (let char of str){
-    if (char >= '0' && char <= '9'){
-      result += nums[0];
-      nums.shift();
-    } else {
-      result += chars[0];
-      chars.shift();
-    }
+    if (char >= '0' && char <= '9')
+      result += nums.shift();
+    else 
+      result += chars.shift();
   }
   return result;
 }
