@@ -18,10 +18,10 @@ function stringManipulation(str){
   for (let char of str){
     if (char >= '0' && char <= '9'){
       result += nums[0];
-      nums.splice(0, 1);
+      nums.shift();
     } else {
       result += chars[0];
-      chars.splice(0, 1);
+      chars.shift();
     }
   }
   return result;
