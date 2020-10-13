@@ -30,7 +30,7 @@ function isAlienSorted(words, order){
   return true;
 }
 
-
+// Test
 let words = ["apple", "app"];
 let order = "abcdefghijklmnopqrstuvwxyz";
 
