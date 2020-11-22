@@ -15,7 +15,7 @@
 
 
 // BFS Solution
-function minMutation(start, end, bank) {
+function minMutationBFS(start, end, bank) {
   let set = new Set(bank);
   if (!set.has(end))   
     return -1;
@@ -46,7 +46,7 @@ function minMutation(start, end, bank) {
 
 
 // DFS Solution
-function minMutation(start, end, bank){
+function minMutationDFS(start, end, bank){
   let set = new Set(bank);
   let visited = new Set();
   visited.add(start);
@@ -88,5 +88,7 @@ function oneM(a,b){
 }
 
 // Test
-console.log("AACCGGTT", "AACCGGTA", ["AACCGGTA"]); // 1
-console.log("AACCGGTT", "AAACGGTA", ["AACCGGTA", "AACCGCTA", "AAACGGTA"]); // 2
+console.log(minMutationBFS("AACCGGTT", "AACCGGTA", ["AACCGGTA"])); // 1
+console.log(minMutationBFS("AACCGGTT", "AAACGGTA", ["AACCGGTA", "AACCGCTA", "AAACGGTA"])); // 2
+console.log(minMutationDFS("AACCGGTT", "AACCGGTA", ["AACCGGTA"])); // 1
+console.log(minMutationDFS("AACCGGTT", "AAACGGTA", ["AACCGGTA", "AACCGCTA", "AAACGGTA"])); // 2
