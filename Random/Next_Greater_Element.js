@@ -67,3 +67,7 @@ function nextGreaterElement(nums1, nums2){
     else return -1;
   });
 }
+
+// Test
+console.log(nextGreaterElement([4,1,2], [1,3,4,2]));  // [-1,3,-1] 
+console.log(nextGreaterElement([2,4], 1,2,3,4]));  // [3,-1] 
