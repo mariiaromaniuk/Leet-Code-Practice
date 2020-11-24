@@ -13,17 +13,17 @@
     
 
 // Time: O(n), Space: O(1)
-function nextGreaterElement(findNums, nums){
-  return findNums.map(n => {
-    let found = nums.indexOf(n);
+function nextGreaterElement(nums1, nums2){
+  return nums1.map(n => {
+    let found = nums2.indexOf(n);
     if (found !== -1){
       // find the next greater element's index
-      while (nums[++found] < n);
+      while (nums2[++found] < n);
       // -1 if not found
-      if (found >= nums.length) 
+      if (found >= nums2.length) 
         found = -1;
       else 
-        found = nums[found];
+        found = nums2[found];
     }
     return found;
   });
