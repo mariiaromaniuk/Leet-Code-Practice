@@ -2,25 +2,33 @@
 // backwards as forwards). Your function should not alter the linked list itself.
 // Time Complexity: O(n), Space Complexity: O(n).
 
-// OPTION 1
+// OPTION 1 -- > Time: O(n), Space: O(1)
 function isPalindrome(head){
-  let arr = [];
-  let p = head;
-
-  while (p){
-    arr.push(p.val);
-    p = p.next;
+  let curr = head;
+  const traverse = node => {
+    if (!node) return true;
+    // traverse to the end of the list first
+    const prevIsSame = traverse(node.next);
+    // when the call stack bounces back, compare the values 
+    // from the head and from the bottom up
+    const currIsSame = curr.val === node.val;
+    curr = curr.next;
+    return prevIsSame && currIsSame;
   }
-
-  for (let i = 0; i < Math.ceil(arr.length/2); i++){
-    if (arr[i] !== arr[arr.length-1-i])
-    return false;
-  }
-  return true;
-
+  return traverse(head);
 }
 
-// OPTION 2
+// OPTION 2 -- > Using Array, Time: O(n), Space: O(n)
+function isPalindrome(head){
+  let arr = [];
+  while (head){
+    arr.push(head.val);
+    head = head.next;
+  }
+  return arr.every((a,i) => a === arr[arr.length - i - 1]);
+}
+
+// OPTION 3 --> Using Stack
 function isPalindrome(node) {
   let slow = node;
   let fast = node;
