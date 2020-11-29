@@ -42,12 +42,12 @@ function isSubtree(s, t) {
 function isSame(s, t) {
   if (!s && !t) return true;
   if (!s || !t) return false;
-  return s.val === t.val && isSame(s.left, t.left) && isSame(s.right, t.right)
+  return s.val === t.val && isSame(s.left, t.left) && isSame(s.right, t.right);
 }
 
 // OPTION 2 --> Time: O(n), Space: O(n)
 // Makes sense as the values need to be compared.
 // If exact nodes, to be compare its different case though.
 function isSubtree(s, t) {
-  return JSON.stringify(s).indexOf(JSON.stringify(t)) !== -1
+  return JSON.stringify(s).indexOf(JSON.stringify(t)) !== -1;
 }
