@@ -3,7 +3,7 @@
  If there is no common prefix, return an empty string "".
 */
 
-// OPTION 1 --> Two pointers
+// OPTION 1 --> Time: O(n + m), Space: O(1)
 function longestCommonPrefix(strs){
   if (!strs.length) return '';
   // traverse first string in array
