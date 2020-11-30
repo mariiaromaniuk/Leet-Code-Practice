@@ -23,10 +23,11 @@ Remember: you can either add more closing or opening if you're still within the 
          ->'((('=>'((()))'
 */
 
-// Backtracking  -->  Time and Space complexity is complicated. Catalan number: 4^n/(n*sqrt(n))
-// Time = O(n*Catalan) because we generat combinations through n steps, each step takes a Catalan number to backtrack.
+// Backtracking  -->  Time and Space is complicated. Catalan number: 4^n/(n*sqrt(n))
+// Time = O(n*Catalan) because we generat combinations through n steps, each step 
+// takes a Catalan number to backtrack.
 // Space = O(4^n/(sqrt(n))) because we need n space to store the sequence.
-function generateParenthesis(n) {
+function generateParenthesis(n){
   const combinations = [];
   // Here we know we can only start with an opening bracket => use 1 open:
   // but we can also start with an empty string and 0 like so:
@@ -46,7 +47,7 @@ function buildCombinationFrom(string, openUsed, closeUsed, n, combinations) {
   }
   // Case: when we can add more opening bracket:
   // If we haven't used all opening bracket (n pairs = n opens)
-  if (openUsed < n) {
+  if (openUsed < n){
     // Add 1 opening, update opening used:
     buildCombinationFrom(string + '(', openUsed + 1, closeUsed, n, combinations);
   }
