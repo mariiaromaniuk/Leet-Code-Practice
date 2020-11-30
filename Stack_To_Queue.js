@@ -1,7 +1,5 @@
-/*
- Implement the following operations of a queue using stacks.
- Push O(1), Pop O(n)
-*/
+// Implement the following operations of a queue using stacks.
+// Push O(1), Pop O(n)
 
 var MyQueue = function () {
   this.stack1 = [];
