@@ -19,8 +19,11 @@ function mergeTwoLists(l1, l2){
 // OPTION 2 --> Iterative
 // Time: O(min(N,M)), Space: O(min(N,M))
 function mergeTwoLists(l1, l2){
+  // set up the head of the merged lists
   const head = new Node(null);
   let curr = head;
+  // change the next pointers in both lists
+  // and line them up according to node values
   while (l1 && l2){
     if (l1.val < l2.val){
       curr.next = l1;
