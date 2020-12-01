@@ -16,7 +16,7 @@
  solution.pickIndex(); // return 1
  solution.pickIndex(); // return 0. It's returning the first element (index = 0) that has probability of 1/4.
 
- Since this is a randomization problem, multiple answers are allowed so the following outputs can be considered correct :
+ Since this is a randomization problem, multiple answers are allowed so the following outputs can be considered correct:
  [null,1,1,1,1,0]
  [null,1,1,1,1,1]
  [null,1,1,1,0,0]
