@@ -25,7 +25,9 @@
  ...... and so on.
 */
 
-var Solution = function(w) {
+// OPTION 1 --> Prefix Sums with Linear Search
+// Time: O(n), Space: O(n)
+var Solution = function(w) { // Time: O(n), Space: O(n)
   this.weights = new Map();
   this.sum=0;
   for (let i=0; i<w.length; i++) {
@@ -34,8 +36,42 @@ var Solution = function(w) {
   }
 };
 
-Solution.prototype.pickIndex = function() {
+Solution.prototype.pickIndex = function() {// Time: O(n), Space: O(1)
   let index = Math.floor(Math.random() * this.sum);
   for (let key of this.weights.keys())
     if (index<key) return this.weights.get(key)
 };
+
+// OPTION 2 --> Prefix Sums with Binary Search
+// Time: O(n), Space: O(n)
+class Solution {
+  constructor(prefixSums, totalSum) {
+    this.prefixSums = prefixSums;
+    this.totalSum = totalSum;
+  }
+
+  Solution(w) { // Time: O(n), Space: O(n)
+    this.prefixSums = new Array[w.length];
+    let prefixSum = 0;
+    for (let i = 0; i < w.length; ++i){
+      prefixSum += w[i];
+      this.prefixSums[i] = prefixSum;
+    }
+    this.totalSum = prefixSum;
+  }
+
+  pickIndex() { // // Time: O(log n), Space: O(1)
+    let target = this.totalSum * Math.random();
+    // run a binary search to find the target zone
+    let low = 0, high = this.prefixSums.length;
+    while (low < high) {
+      // better to avoid the overflow
+      let mid = low + (high - low) / 2;
+      if (target > this.prefixSums[mid])
+        low = mid + 1;
+      else
+        high = mid;
+    }
+    return low;
+  }
+}
