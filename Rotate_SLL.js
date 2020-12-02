@@ -19,7 +19,7 @@ var rotateRight = function(head, k) {
   return head;
 };
 
-// OPTION 1 --> Time: O(n), Space: O(1)
+// OPTION 2 --> Time: O(n), Space: O(1)
 var rotateRight = function(head, k) {
   if (!head) return head;
   let len = 0, prev = null, tail = null;
