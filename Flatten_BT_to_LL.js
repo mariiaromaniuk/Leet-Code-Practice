@@ -8,16 +8,17 @@
 function flatten(root){
   if (root === null) return;
   if (root.left){
-	 // find the most right leaf of current left node
+    // find the most right leaf of current left node
     var last = root.left;
     while (last.right !== null) last = last.right;
     // keep current right node in a tmp var
     var tmp = root.right;
-		// we move the left child to our right.
+    // we move the left child to our right.
     root.right = root.left;
-		// connect previous right node(tmp) to the right of the most right leaf we found
+    // connect previous right node(tmp) to the right 
+    // of the most right leaf we found
     last.right = tmp;
-		// make current left null
+    // make current left null
     root.left = null;
   }
   flatten(root.right);
