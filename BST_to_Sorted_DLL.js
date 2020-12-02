@@ -11,7 +11,7 @@
 */
 
 // Idea: we perform an in-order traversal and visit all nodes
-// we keep track of previous node so that we can connect current node with previous node 
+// we keep track of previous node so that we can connect current node with prev
 // Time: O(n), we visit all nodes exactly once
 // Space: O(n), call stack can go as deep as N
 function treeToDoublyList(root){
