@@ -1,4 +1,4 @@
-# LeetCode Practice 
+# Leet-Code Practice 
 This repository is my personal collection of completed LeetCode challenges, whiteboarding question practice, and other assorted problems written in JavaScript and Java. I will be updating this repository in the future to include interpretations of the algorithms in other languages.  
 
 ![](BigO/bigO_chat.jpg)
