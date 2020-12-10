@@ -4,21 +4,24 @@
    Find the letter that was added in t.
 */
 
-var findTheDifference = function(s, t) {
-    // 'absd' => 'abcda'
-    // s = { a:1, b:0, c:0, d:0 }
-    let hash = {};
+function findTheDifference(s, t) {
+  // 'absd' => 'abcda'
+  // s = { a:1, b:0, c:0, d:0 }
+  let hash = {};
     
-    for (let i = 0; i < s.length; i++) {
-        let char = s[i];
-        hash[char] = (hash[char]) ? ++hash[char] : 1;
+  for (let i = 0; i < s.length; i++) {
+    let char = s[i];
+    if (!hash[char])
+      hash[char] = 1;
+    else
+      hash[char] = hash[char] + 1;
     }
     
-    for (let i = 0; i < t.length; i++) {
-        let char = t[i];
-        if (hash[char])  // true if >= 1
-            --hash[char];
-        else 
-            return char;
+  for (let i = 0; i < t.length; i++) {
+    let char = t[i];
+    if (hash[char])  // true if >= 1
+      --hash[char];
+    else 
+      return char;
     } 
-};
+}
