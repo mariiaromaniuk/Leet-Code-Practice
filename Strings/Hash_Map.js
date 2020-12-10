@@ -4,7 +4,7 @@
    Find the letter that was added in t.
 */
 
-function findTheDifference(s, t) {
+function findDifference(s, t) {
   // 'absd' => 'abcda'
   // s = { a:1, b:0, c:0, d:0 }
   let hash = {};
@@ -25,3 +25,6 @@ function findTheDifference(s, t) {
       return char;
     } 
 }
+
+// Test
+console.log(findDifference('absd', 'abcda')); // a
