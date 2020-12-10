@@ -1,5 +1,5 @@
-# Data Structures and Algorithms  
-This repository is my personal collection of completed LeetCode challenges, katas, whiteboarding question practice, and other assorted problems This repository is a collection of completed code challenges, whiteboarding question practice, and other assorted problems written in JavaScript and Java. I will be updating this repository in the future to include interpretations of the algorithms in other languages.  
+# LeetCode Practice 
+This repository is my personal collection of completed LeetCode challenges, whiteboarding question practice, and other assorted problems written in JavaScript and Java. I will be updating this repository in the future to include interpretations of the algorithms in other languages.  
 
 ![](BigO/bigO_chat.jpg)
 
