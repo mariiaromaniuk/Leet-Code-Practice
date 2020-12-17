@@ -44,3 +44,19 @@ function minIncrementForUnique(arr){
   }
   return moves;
 }
+
+// OPTION 2 --> Time: O(n log n), Space: O(1)
+function minIncrementForUnique(arr){
+  arr.sort((a,b) => a-b);
+  let moves = 0;
+  for (let i = 1; i < arr.length; i++){
+    if (arr[i-1] >= arr[i]){
+      let increment = arr[i-1] - arr[i] + 1;
+      arr[i] += increment;
+      moves += increment;
+    }
+  }
+  return moves;
+}
+
+
