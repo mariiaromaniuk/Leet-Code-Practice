@@ -74,3 +74,6 @@ for (i = 0; i < result.length; i++) {
   result[i].print_interval();
 }
 console.log();
+
+// Time: O(n), where ‘n’ is the total number of intervals.
+// Space: O(n) as we need to return a list containing all the merged intervals.
