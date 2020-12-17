@@ -56,3 +56,7 @@ for (i = 0; i < result.length; i++) {
   result[i].print_interval();
 }
 console.log();
+
+// Time: O(n + m), where ‘n’ and ‘m’ are the total number of intervals in the input arrays respectively.
+// Space: Ignoring the space needed for the result list, the algorithm runs in constant space O(1).
+
