@@ -43,3 +43,34 @@ function insert(intervals, new_interval) {
   return merged;
 }
 
+// Test
+process.stdout.write('Intervals after inserting the new interval: ');
+let result = insert([
+  new Interval(1, 3),
+  new Interval(5, 7),
+  new Interval(8, 12),
+], new Interval(4, 6));
+for (i = 0; i < result.length; i++) {
+  result[i].print_interval();
+}
+console.log();
+
+process.stdout.write('Intervals after inserting the new interval: ');
+result = insert([
+  new Interval(1, 3),
+  new Interval(5, 7),
+  new Interval(8, 12),
+], new Interval(4, 10));
+for (i = 0; i < result.length; i++) {
+  result[i].print_interval();
+}
+console.log();
+
+process.stdout.write('Intervals after inserting the new interval: ');
+result = insert([new Interval(2, 3),
+  new Interval(5, 7),
+], new Interval(1, 4));
+for (i = 0; i < result.length; i++) {
+  result[i].print_interval();
+}
+console.log();
