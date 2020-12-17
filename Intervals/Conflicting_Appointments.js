@@ -47,3 +47,7 @@ console.log(`Can attend all appointments: ${can_attend_all_appointments([
   new Interval(2, 3),
   new Interval(3, 6),
 ])}`);
+
+// Time: O(n log(n)), where 'n' is the total number of appointments. 
+// Though we are iterating the intervals only once, O(n log(n)) required by sorting.
+// Space: O(n), which we need for sorting (Java, Arrays.sort() uses Timsort, which needs O(n) space).
