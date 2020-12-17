@@ -12,3 +12,35 @@
  • If there are 0 values x in A, then a saved value v gets incremented to x.
 */
 
+// OPTION 1 --> Time: O(n), Space: O(n)
+function minIncrementForUnique(arr){
+  let count = [], moves = 0;
+  // count duplicate values
+  for (let i = 0; i < arr.length; i++){
+    // count[arr[i]] ? count[arr[i]] += 1 : count[arr[i]] = 1;
+    // using value at the arr[i] as index for count
+    if (count[arr[i]]) 
+      // if exist - increment
+      count[arr[i]] += 1; 
+    else 
+    // if not add: count = [undef, undef, undef, 1, ..];
+      count[arr[i]] = 1;
+  }
+  for (let i = 0; i < count.length; i++){
+    let freq = count[i];
+    // work with not unique values only
+    if (freq >= 2){
+      // count[i] = 1;
+      if (count[i+1]) // if its not unfefined
+        // if el was 2 times in the initial arr (freq = 2)
+        // we'd need to change it 1 time and the next not unique el 
+        // we'd need to change 'its freq times' + 'prev el freq' times
+        count[i+1] += freq-1;
+      else 
+        // we need to think about duplicates we created by incrementing
+        count[i+1] = freq-1;
+      moves += freq-1;
+    }
+  }
+  return moves;
+}
