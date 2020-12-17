@@ -59,4 +59,7 @@ function minIncrementForUnique(arr){
   return moves;
 }
 
+// Test
+console.log(minIncrementForUnique([3,2,1,2,1,7])); // 6
+console.log(minIncrementForUnique([1,2,2])); // 1
 
