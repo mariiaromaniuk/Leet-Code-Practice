@@ -38,3 +38,37 @@ class EmployeeInterval {
   }
 }
 
+function employeeFreeTime(schedule){
+  let result = [];
+  if (!schedule || !schedule.length) 
+    return result;
+  
+  minHeap = new Heap([], null, ((a,b) => a.interval.start < b.interval.start));
+  // insert the first interval of each employee to the queue
+  for (let i =0; i < schedule.length; i++) {
+    minHeap.push(new EmployeeInterval(schedule[i][0], i, 0));
+  }
+  let previousInterval = minHeap.peek().interval;
+  while (minHeap.length > 0){
+    const queueTop = minHeap.pop();
+    // if previousInterval is not oerlapping with the next interval, insert a free interval
+    if (previousInterval.end < queueTop.interval.start){
+      result.push( new Interval(previousInterval.end, queueTop.interval.start));
+      previousInterval = queueTop.interval;
+    // overlapping intervals, update the previousInterval if needed
+    } else {
+      if (previousInterval.end < queueTop.interval.end){
+        previousInterval = queueTop.interval;
+      }
+    }
+    // if there are more intervals available for the same employee, add their next interval
+    const employeeSchedule = schedule[queueTop.employeeIndex];
+    if (employeeSchedule.length > queueTop.intervalIndex + 1){
+      minHeap.push(new EmployeeInterval(
+        employeeSchedule[queueTop.intervalIndex + 1], queueTop.employeeIndex,
+        queueTop.intervalIndex + 1,
+      ));
+    }
+  }
+  return result;
+}
