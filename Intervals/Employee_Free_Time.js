@@ -72,3 +72,39 @@ function employeeFreeTime(schedule){
   }
   return result;
 }
+
+// Test
+let input = [
+  [new Interval(1,3), new Interval(5,6)],
+  [new Interval(1,3), new Interval(5,6)],
+];
+process.stdout.write('Free intervals: ', end = '');
+let result = employeeFreeTime(input);
+for (i = 0; i < result.length; i++) {
+  result[i].print_interval();
+}
+console.log();
+
+let input = [
+  [new Interval(1,3), new Interval(9,12)],
+  [new Interval(2,4)], 
+  [new Interval(6,8)],
+];
+process.stdout.write('Free intervals: ', end = '');
+let result = employeeFreeTime(input);
+for (i = 0; i < result.length; i++) {
+  result[i].print_interval();
+}
+console.log();
+
+let input = [
+  [new Interval(1,3)],
+  [new Interval(2,4)], 
+  [new Interval(3,5), new Interval(7,9)],
+];
+process.stdout.write('Free intervals: ', end = '');
+let result = employeeFreeTime(input);
+for (i = 0; i < result.length; i++) {
+  result[i].print_interval();
+}
+console.log();
