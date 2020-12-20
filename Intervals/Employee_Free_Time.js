@@ -108,3 +108,7 @@ for (i = 0; i < result.length; i++) {
   result[i].print_interval();
 }
 console.log();
+
+// Time: O(n log(n)), where ‘n’ is the total number of intervals. We are iterating the intervals only once 
+// which will take O(n), but since we need to sort the intervals, our algorithm will take O(n log(n)).
+// Space: O(n) as we need to return a list containing all the merged intervals. We will also need O(n) space for sorting. 
