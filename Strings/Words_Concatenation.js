@@ -51,3 +51,7 @@ function find_word_concatenation(str, words){
   }
   return resultIndices;
 }
+
+// Test
+console.log(find_word_concatenation('catfoxcat', ['cat', 'fox']));
+console.log(find_word_concatenation('catcatfoxfox', ['cat', 'fox']));
