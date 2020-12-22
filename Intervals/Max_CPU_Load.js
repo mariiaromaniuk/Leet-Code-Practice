@@ -7,16 +7,12 @@
  Example 2: [[6,7,10], [2,4,11], [8,12,15]] --> 15, None of the jobs overlap, therefore we will take 
  the maximum load of any job which is 15.
  Example 3: [[1,4,2], [2,4,1], [3,6,5]] --> 8, All jobs overlap during the time interval [3,4].
+ 
  Algorithm:
  The problem follows the Merge Intervals pattern and can easily be converted to Minimum Meeting Rooms.
  Similar to Minimum Meeting Rooms' where we were trying to find the maximum number of meetings happening 
  at any time, for 'Maximum CPU Load' we need to find the maximum number of jobs running at any time. We'll 
  need to keep a running count of the maximum CPU load at any time to find the overall maximum load.
- 
- Time: O(n * log n), where 'n' is the total number of jobs. This is due to the sorting. Also, while iterating 
- the jobs, we might need to poll/offer jobs to the priority queue. Each of these operations can take O(logn).
- Space: O(n), which is required for sorting. Also, in the worst case, we have to insert all the jobs into the 
- priority queue (when all jobs overlap) which will also take O(n).
 */
 
 const Heap = require('./collections/heap'); // http://www.collectionsjs.com
@@ -54,3 +50,9 @@ function maxCpuLoad(jobs){
 console.log(maxCpuLoad([new Job(1,4,3), new Job(2,5,4), new Job(7,9,6)]));
 console.log(maxCpuLoad([new Job(6,7,10), new Job(2,4,11), new Job(8,12,15)]));
 console.log(maxCpuLoad([new Job(1,4,2), new Job(2,4,1), new Job(3,6,5)]));
+
+// Time: O(n * log n), where 'n' is the total number of jobs. This is due to the sorting. Also, while iterating 
+// the jobs, we might need to poll/offer jobs to the priority queue. Each of these operations can take O(logn).
+// Space: O(n), which is required for sorting. Also, in the worst case, we have to insert all the jobs into the 
+// priority queue (when all jobs overlap) which will also take O(n).
+
