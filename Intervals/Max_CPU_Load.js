@@ -18,3 +18,13 @@
  Space: O(n), which is required for sorting. Also, in the worst case, we have to insert all the jobs into the 
  priority queue (when all jobs overlap) which will also take O(n).
 */
+
+const Heap = require('./collections/heap'); // http://www.collectionsjs.com
+
+class Job {
+  constructor(start, end, cpuLoad){
+    this.start = start;
+    this.end = end;
+    this.cpuLoad = cpuLoad;
+  }
+}
