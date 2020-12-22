@@ -28,3 +28,24 @@ class Job {
     this.cpuLoad = cpuLoad;
   }
 }
+
+function maxCpuLoad(jobs){
+  // sort the jobs by the start time 
+  jobs.sort((a, b) => a.start - b.start);
+
+  let maxCPULoad = 0,
+      currentCPULoad = 0;
+  const minHeap = new Heap([], null, ((a,b) => b.end - a.end));
+
+  for (let i = 0; i < jobs.length; i++){
+    // remove all the jobs that have ended
+    while (minHeap.length > 0 && jobs[i].start >= minHeap.peek().end){
+      currentCPULoad -= minHeap.pop().cpuLoad;
+    }
+    // add the current job into minHeap
+    minHeap.push(jobs[i]);
+    currentCPULoad += jobs[i].cpuLoad;
+    maxCPULoad = Math.max(maxCPULoad, currentCPULoad);
+  }
+  return maxCPULoad;
+}
