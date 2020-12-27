@@ -36,3 +36,11 @@ function same(arr1, arr2){
   return true;
 }
 
+// Test
+let arr1 = [2, 2, 3, 4];
+let arr2 = [4, 9, 4, 16]; 
+let arr3 = [1, 4, 5, 16];
+let arr4 = [4, 4, 9, 16, 17];
+
+console.log(same(arr1, arr2));  // true
+console.log(same(arr3, arr4));  // false
