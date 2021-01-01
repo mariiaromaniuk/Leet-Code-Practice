@@ -3,7 +3,7 @@
 // The value 1 has 3 occurrences, 2 has 2 and 3 has 1. No two values have the same number of occurrences.
 
 // OPTION 1
-var uniqueOccurrences = function (arr) {
+function uniqueOccurrences(arr){
     // Let's make a map to keep track of how many times each number occurs in our array
     let myMap = new Map()
 
@@ -42,4 +42,4 @@ function uniqueOccurrences(arr){
         if(val[i]===val[i+1]) return false;
     }
     return true;
-};
+}
