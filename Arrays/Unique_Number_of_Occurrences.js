@@ -30,7 +30,7 @@ var uniqueOccurrences = function (arr) {
     return true
 };
 
-
+// OPTION 2
 var uniqueOccurrences = function(arr) {
     const obj = {};
 //     Creating hashmap to store count of each number
