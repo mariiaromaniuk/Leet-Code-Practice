@@ -39,10 +39,11 @@ function uniqueOccurrences(arr){
     const val = Object.values(obj).sort((a, b) => a - b);
   // Now, just finding the duplicates
   for (let i = 0; i < val.length-1; i++){
-    if(val[i] === val[i+1]) return false;
+    if (val[i] === val[i+1]) return false;
   }
   return true;
 }
 
 // Test
-console.log(uniqueOccurrences([1,2,2,1,1,3]));
+console.log(uniqueOccurrences([1,2,2,1,1,3])); // true
+console.log(uniqueOccurrences([1,2])); // false
