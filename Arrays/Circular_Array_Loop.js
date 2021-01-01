@@ -38,3 +38,4 @@ function circularArrayLoop(nums){
 
 // Test 
 console.log(circularArrayLoop([2,-1,1,2,2])); // true
+console.log(circularArrayLoop([-1,2])); // false
