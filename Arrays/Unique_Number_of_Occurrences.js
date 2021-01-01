@@ -31,7 +31,7 @@ var uniqueOccurrences = function (arr) {
 };
 
 // OPTION 2
-var uniqueOccurrences = function(arr) {
+function uniqueOccurrences(arr){
     const obj = {};
 //     Creating hashmap to store count of each number
     arr.forEach(val => obj[val] = (obj[val] || 0) + 1);
