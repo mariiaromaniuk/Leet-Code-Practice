@@ -4,19 +4,17 @@
 
 // OPTION 1
 function uniqueOccurrences(arr){
-    // Let's make a map to keep track of how many times each number occurs in our array
-    let myMap = new Map()
+  // Let's make a map to keep track of how many times each number occurs in our array
+  let myMap = new Map()
 
-    //For every number in our array using the for-of loop
-    for (let num of arr) {
-        //If we have the key already, we know the value is a number, so increment it by one
-        if (myMap.has(num)) {
-            myMap.set(num, (myMap.get(num) + 1))
-        } else {
-            //If we dont have the key in our map...
-            myMap.set(num, 1)
-        }
-    }
+  // For every number in our array using the for-of loop
+  for (let num of arr){
+    if (myMap.has(num))
+      // If we have the key already, we know the value is a number, so increment it by one
+      myMap.set(num, (myMap.get(num) + 1))
+    else 
+      // If we dont have the key in our map...
+      myMap.set(num, 1)
     //Make a new set and add the value of each key. If at any point we already saw the value we know the occurrences are NOT unique
     let mySet = new Set()
     //Grab the key and value of each myMap entry
