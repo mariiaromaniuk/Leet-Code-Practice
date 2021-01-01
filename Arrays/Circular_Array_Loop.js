@@ -35,3 +35,6 @@ function circularArrayLoop(nums){
   }
   return false;
 }
+
+// Test 
+console.log(circularArrayLoop([2,-1,1,2,2])); // true
