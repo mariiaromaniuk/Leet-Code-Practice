@@ -7,19 +7,18 @@
  */
 
 var maximumUniqueSubarray = function(nums) {
-    let l = 0, r = 0, max = 0,hashSet=new Set(),sum = 0;
-    while (r<nums.length) {
-       if (!hashSet.has(nums[r])) {
-           hashSet.add(nums[r]);
-           sum += nums[r];
-           max = Math.max(max, sum);
-           r++;
-           
-       } else {
-           hashSet.delete(nums[l]);
-           sum -= nums[l];
-           l++; 
-       }                          
-    }
-return max;    
+  let l = 0, r = 0, max = 0,hashSet=new Set(),sum = 0;
+  while (r<nums.length) {
+    if (!hashSet.has(nums[r])) {
+      hashSet.add(nums[r]);
+      sum += nums[r];
+      max = Math.max(max, sum);
+      r++;
+    } else {
+      hashSet.delete(nums[l]);
+      sum -= nums[l];
+      l++; 
+    }                          
+  }
+  return max;    
 };
