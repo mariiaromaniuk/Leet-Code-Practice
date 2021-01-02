@@ -6,9 +6,10 @@
  equal to a[l],a[l+1],...,a[r] for some (l,r).
  */
 
-var maximumUniqueSubarray = function(nums) {
+// OPTION 1
+function maximumUniqueSubarray(nums) {
   let l = 0, r = 0, max = 0,hashSet=new Set(),sum = 0;
-  while (r<nums.length) {
+  while (r < nums.length) {
     if (!hashSet.has(nums[r])) {
       hashSet.add(nums[r]);
       sum += nums[r];
@@ -21,4 +22,4 @@ var maximumUniqueSubarray = function(nums) {
     }                          
   }
   return max;    
-};
+}
