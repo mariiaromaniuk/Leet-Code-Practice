@@ -30,3 +30,28 @@ function reformatNumber(number){
   // remove all non-numbers (dashes, and spaces)
   return recursiveReformatNumber(number.replace(/\D/g, ""));
 }
+
+// OPTION 2
+var reformatNumber = function(number) {
+  number = number.split('-').join('').split(' ').join("")
+  let res = ''
+  
+  for( let i = 0; i < number.length; i+=3){
+    if(number.slice(i, number.length).length > 4) {
+        res += number.slice(i,i+3) 
+        res += i+3 !== number.length ? '-' : ''  
+    } else {
+        const remainingNumbers =number.slice(i, number.length).length
+        switch(remainingNumbers) {
+          case 4:
+            res += number.slice(i, i+2) + "-" +  number.slice(i+2, i+4)
+            return res
+          default: 
+            res += number.slice(i, i+remainingNumbers)
+            return res
+        }
+    }
+  
+  }
+  return res
+};
