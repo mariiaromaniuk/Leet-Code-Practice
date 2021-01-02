@@ -33,22 +33,22 @@ function reformatNumber(number){
 
 // OPTION 2
 function reformatNumber(number){
-  number = number.split('-').join('').split(' ').join("")
-  let res = ''
+  number = number.split('-').join('').split(' ').join("");
+  let res = '';
   
   for (let i = 0; i < number.length; i+=3){
     if (number.slice(i, number.length).length > 4){
-      res += number.slice(i,i+3) 
-      res += i+3 !== number.length ? '-' : ''  
+      res += number.slice(i, i+3);
+      res += i+3 !== number.length ? '-' : '';  
     } else {
-      const remainingNumbers =number.slice(i, number.length).length
-      switch(remainingNumbers) {
+      const remainingNumbers =number.slice(i, number.length).length;
+      switch(remainingNumbers){
         case 4:
-          res += number.slice(i, i+2) + "-" +  number.slice(i+2, i+4)
-          return res
+          res += number.slice(i, i+2) + "-" +  number.slice(i+2, i+4);
+          return res;
         default: 
-          res += number.slice(i, i+remainingNumbers)
-          return res
+          res += number.slice(i, i+remainingNumbers);
+          return res;
       }
     }
   }
