@@ -85,3 +85,6 @@ function reformatNumber(number){
   }
   return res;
 }
+
+// Test
+console.log(reformatNumber("1-23-45 6")); //"123-456"
