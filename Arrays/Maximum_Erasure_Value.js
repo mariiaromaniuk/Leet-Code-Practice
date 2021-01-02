@@ -33,4 +33,4 @@ function maximumUniqueSubarray(nums){
     max = sum > max ? sum : max;
   }
   return max;
-};
+}
