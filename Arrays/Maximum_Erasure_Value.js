@@ -42,3 +42,6 @@ function maximumUniqueSubarray(nums){
   }
   return max;
 }
+
+// Test
+console.log(maximumUniqueSubarray([4,2,4,5,6])); // 17
