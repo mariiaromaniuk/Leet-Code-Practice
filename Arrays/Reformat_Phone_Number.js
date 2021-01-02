@@ -13,7 +13,8 @@
  Return the phone number after formatting.
 */
 
-var reformatNumber = function (number) {
+// OPTION 1
+function reformatNumber(number){
   // recursive function to add dashes, needs a string without dashes as input
   var recursiveReformatNumber = function(number) {
 
