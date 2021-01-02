@@ -45,3 +45,4 @@ function maximumUniqueSubarray(nums){
 
 // Test
 console.log(maximumUniqueSubarray([4,2,4,5,6])); // 17
+console.log(maximumUniqueSubarray([5,2,1,2,5,2,1,2,5])); // 8
