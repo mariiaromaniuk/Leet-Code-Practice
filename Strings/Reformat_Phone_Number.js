@@ -88,3 +88,4 @@ function reformatNumber(number){
 
 // Test
 console.log(reformatNumber("1-23-45 6")); //"123-456"
+console.log(reformatNumber("123 4-5678")); //"123-45-67"
