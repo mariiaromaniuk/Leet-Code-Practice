@@ -20,3 +20,31 @@
  Input: nums = [3,2,1]
  Output: 0 --> There is no good way to split nums.
 */
+
+function waysToSplit(A) {
+  const N = A.length;
+  const mod = 1e9 + 7;
+  const pre = [...A];
+  for (let i = 1; i < N; i++) pre[i] += pre[i - 1];
+  let res = 0;
+  // j is the smallest ending idx of mid arr j > i, j < N - 1
+  // k is the largest ending idx of mid arr k >= j, k < N - 1
+  for (let i = 0, j = 1, k = 1; i < N - 2; i++) {
+    j = Math.max(j, i + 1);
+    k = Math.max(k, j);
+    const left = pre[i];
+    if (left > pre[N - 1] / 3) break;
+
+    // while left > mid, we need to increase j
+    while (left > pre[j] - pre[i] && j < N - 1) j++;
+    if (j >= N - 1) break;
+
+    /// while mid <= right, we still have room to increase k
+    while (pre[k] - pre[i] <= pre[N - 1] - pre[k] && k < N - 1) k++;
+    k--; // Shift back one position
+    if (k < j || k >= N - 1) continue;
+
+    res += (k - j + 1) % mod;
+  }
+  return res % mod;
+}
