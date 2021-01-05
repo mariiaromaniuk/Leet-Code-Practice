@@ -21,15 +21,17 @@
  Output: 0 --> There is no good way to split nums.
 */
 
-function waysToSplit(A) {
-  const N = A.length;
+function waysToSplit(nums){
+  const N = nums.length;
   const mod = 1e9 + 7;
-  const pre = [...A];
-  for (let i = 1; i < N; i++) pre[i] += pre[i - 1];
+  const pre = [...nums];
+  for (let i = 1; i < N; i++) 
+    pre[i] += pre[i - 1];
+ 
   let res = 0;
   // j is the smallest ending idx of mid arr j > i, j < N - 1
   // k is the largest ending idx of mid arr k >= j, k < N - 1
-  for (let i = 0, j = 1, k = 1; i < N - 2; i++) {
+  for (let i = 0, j = 1, k = 1; i < N - 2; i++){
     j = Math.max(j, i + 1);
     k = Math.max(k, j);
     const left = pre[i];
