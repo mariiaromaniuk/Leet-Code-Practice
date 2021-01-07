@@ -32,9 +32,9 @@ function maxDepth(str){
 }
 
 // Test
-console.log(maxDepth("(1+(2*3)+((8)/4))+1)"); // 3
-console.log(maxDepth("(1)+((2))+(((3)))"); // 3
-console.log(maxDepth("1+(2*3)/(2-1)"); // 1
-console.log(maxDepth("1"); // 0
+console.log(maxDepth("(1+(2*3)+((8)/4))+1)")); // 3
+console.log(maxDepth("(1)+((2))+(((3)))")); // 3
+console.log(maxDepth("1+(2*3)/(2-1)")); // 1
+console.log(maxDepth("1")); // 0
 
             
