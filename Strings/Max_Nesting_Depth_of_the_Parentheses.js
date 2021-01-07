@@ -19,7 +19,7 @@
  Output: 3 --> Digit 8 is inside of 3 nested parentheses in the string.
 */
 
-
+// Time: O(n), Space: O(1)
 function maxDepth(str){
   let maxCount = 0, count = 0;
   for (let i = 0; i < str.length; i++) {
