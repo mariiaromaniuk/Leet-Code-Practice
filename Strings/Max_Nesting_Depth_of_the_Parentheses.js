@@ -18,3 +18,14 @@
  Input: s = "(1+(2*3)+((8)/4))+1"
  Output: 3 --> Digit 8 is inside of 3 nested parentheses in the string.
 */
+
+function maxDepth(str){
+  let maxCount = 0, count = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === '(') 
+      maxCount = Math.max(maxCount, ++count);
+    else if (str[i] === ')') 
+       count--;
+  }
+  return maxCount;
+}
