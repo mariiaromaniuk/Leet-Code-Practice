@@ -15,9 +15,10 @@
  Given a VPS represented as string s, return the nesting depth of s.
 
  Example:
- Input: s = "(1+(2*3)+((8)/4))+1"
+ Input: str = "(1+(2*3)+((8)/4))+1"
  Output: 3 --> Digit 8 is inside of 3 nested parentheses in the string.
 */
+
 
 function maxDepth(str){
   let maxCount = 0, count = 0;
@@ -29,3 +30,11 @@ function maxDepth(str){
   }
   return maxCount;
 }
+
+// Test
+console.log(maxDepth("(1+(2*3)+((8)/4))+1)"); // 3
+console.log(maxDepth("(1)+((2))+(((3)))"); // 3
+console.log(maxDepth("1+(2*3)/(2-1)"); // 1
+console.log(maxDepth("1"); // 0
+
+            
