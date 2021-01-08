@@ -35,3 +35,39 @@
  0 <= l[i] < r[i] < n
  -105 <= nums[i] <= 105
 */
+
+
+// OPTION 1
+function checkArithmeticSubarrays(nums, l, r) {
+  const boolArr = [];
+  const length = l.length;
+
+  for(let i = 0; i < length; i++){
+    const temp = nums.slice(l[i], r[i] + 1);
+    const min = Math.min(...temp);
+    const max = Math.max(...temp);
+
+    if (min === max){
+      boolArr.push(true);
+      continue;
+    }
+    const len = r[i] - l[i] + 1
+    const diff = (max - min) / (len - 1);
+    let set = new Set(temp);
+
+    if (set.size !== len){
+      boolArr.push(false);
+      continue;
+    }
+    set.delete(min);
+    let start = min;
+
+    while (start < max){
+      start += diff;
+      if (set.has(start)) set.delete(start);
+      else break;
+    }
+    boolArr.push(!set.size);
+  }
+  return boolArr;
+}
