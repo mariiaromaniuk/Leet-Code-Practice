@@ -22,3 +22,17 @@
  Output: 3
  Explanation: There are only 2 subarrays of odd length, [1] and [2]. Their sum is 3.
 */
+
+// OPTION 1
+function sumOddLengthSubarrays(arr){
+  let count = 0;
+  for (let i = 0; i < arr.length; i++){ // helping in selecting the starting point
+    for (let j = i; j < arr.length; j++){  // helping in selecting the endpoint point
+      if ((i - j)%2 == 0){  // so that it only count the subarrays which have odd length
+        for (let k = i; k <= j; k++) // looping from start point to end point and adding them
+          count += arr[k];
+      }
+    }
+  }
+  return count;
+}
