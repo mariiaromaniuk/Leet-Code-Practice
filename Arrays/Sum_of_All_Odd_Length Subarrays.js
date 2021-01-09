@@ -24,6 +24,7 @@
 */
 
 // OPTION 1
+// Time: O(n^3), Space: O(1)
 function sumOddLengthSubarrays(arr){
   let count = 0;
   for (let i = 0; i < arr.length; i++){ // helping in selecting the starting point
@@ -35,4 +36,20 @@ function sumOddLengthSubarrays(arr){
     }
   }
   return count;
+}
+
+// OPTION 2
+// Time: O(n^2), Space: O(1)
+function sumOddLengthSubarrays(arr){
+  let oddLength = 1;
+  let sum = 0;
+    
+  while (arr.length >= oddLength){
+    for (let i = 0; i < arr.length-oddLength+1; i++){
+      for (let j = i; j < oddLength+i; j++)
+        sum += arr[j];
+    }
+    oddLength += 2;
+  }
+  return sum;
 }
