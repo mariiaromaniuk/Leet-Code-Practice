@@ -31,3 +31,26 @@ Example 5:
 Input: nums = [1000000000,1000000000,1000000000], p = 3
 Output: 0
 */
+
+function minSubarray(nums, p) {
+  let n = nums.length;
+  let map = new Map([[0,-1]]);
+  let total = 0, res = n, sum = 0;
+  for (let i = 0; i < n; i++)
+    total += nums[i]
+  total = total % p
+    
+  for (let i = 0; i < n; i++){
+    sum = (sum + nums[i]) % p;
+    map.set(sum, i);
+    let prevSum = mod(sum-total, p);
+    if (map.has(prevSum))
+      res = Math.min(res, i-map.get(prevSum));
+  }
+  return res == nums.length ? -1 : res;
+}
+
+function mod(a,b){
+  let c = a % b;
+  return c < 0 ? c+b : c;
+}
