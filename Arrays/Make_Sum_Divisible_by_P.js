@@ -18,15 +18,6 @@
  Input: nums = [1,2,3], p = 3
  Output: 0
  Explanation: Here the sum is 6. which is already divisible by 3. Thus we do not need to remove anything.
-
- Example 4:
- Input: nums = [1,2,3], p = 7
- Output: -1
- Explanation: There is no way to remove a subarray in order to get a sum divisible by 7.
-
- Example 5:
- Input: nums = [1000000000,1000000000,1000000000], p = 3
- Output: 0
 */
 
 function minSubarray(nums, p) {
@@ -55,4 +46,6 @@ function mod(a,b){
 // Test
 console.log(minSubarray([3,1,4,2], 6)); // 1
 console.log(minSubarray([6,3,5,2], 9)); // 2
-
+console.log(minSubarray([1,2,3], 3)); // 0
+console.log(minSubarray([1,2,3], 7)); // -1
+console.log(minSubarray([1000000000,1000000000,1000000000], 3)); // 0
