@@ -51,3 +51,8 @@ function mod(a,b){
   let c = a % b;
   return c < 0 ? c+b : c;
 }
+
+// Test
+console.log(minSubarray([3,1,4,2], 6)); // 1
+console.log(minSubarray([6,3,5,2], 9)); // 2
+
