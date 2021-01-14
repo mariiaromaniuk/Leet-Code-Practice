@@ -19,3 +19,30 @@
  Explanation: We need to shift each character in s one time to convert it into t. We can shift 'a' to 'b' during the 1st move. 
  However, there is no way to shift the other characters in the remaining moves to obtain t from s.
 */
+
+function canConvertString(s, t, k){
+  if (s === t) return true;
+  if (s.length !== t.length) return false;
+    
+  if (k > 26*s.length) return true;
+  if (k < s.length) return false;
+    
+  const usedSteps = new Array(27).fill(0);
+  let steps;
+    
+  for (let i = 0; i < s.length; i++){
+    steps = t.charCodeAt(i) - s.charCodeAt(i); 
+    if (steps == 0) continue;
+        
+		  // steps should be strictly positive
+    if (steps < 0) steps = 26 + steps;
+
+    // if 26*i + j > k, it means the min available steps from s[i] to t[i] is bigger than k
+		  // therefore, no possible answer so return false
+    if (26*usedSteps[steps] + steps > k) return false;
+        
+		  // update the future min steps
+    usedSteps[steps]++;
+  }
+  return true;
+}
