@@ -33,16 +33,21 @@ function canConvertString(s, t, k){
   for (let i = 0; i < s.length; i++){
     steps = t.charCodeAt(i) - s.charCodeAt(i); 
     if (steps == 0) continue;
-        
-		  // steps should be strictly positive
+	  
+    // steps should be strictly positive
     if (steps < 0) steps = 26 + steps;
 
-    // if 26*i + j > k, it means the min available steps from s[i] to t[i] is bigger than k
-		  // therefore, no possible answer so return false
+    // if 26*i + j > k, it means the min available steps from s[i] to t[i] 
+    // is bigger than k, therefore, no possible answer so return false
     if (26*usedSteps[steps] + steps > k) return false;
-        
-		  // update the future min steps
+    
+    // update the future min steps
     usedSteps[steps]++;
   }
   return true;
 }
+
+// Test
+console.log(canConvertString("input", "ouput", 9)); // true
+console.log(canConvertString("abc", "bcd", 10)); // false
+console.log(canConvertString("aab", "bbb", 27)); // true
