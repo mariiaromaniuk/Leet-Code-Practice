@@ -32,3 +32,8 @@ function kthFactor(n, k){
   }
   return -1;
 }
+
+// Test
+console.log(kthFactor(12, 3)); // 3
+console.log(kthFactor(7, 2)); // 7
+console.log(kthFactor(4, 4)); // -1
