@@ -37,12 +37,12 @@ function getFolderNames(names){
       let newName = `${name}(${count})`;  
 	  
       // Find the next available number because the new file name with () may have already been taken
-	     // e.g. map = {target: 1, target(1): 1}, name = target
+      // e.g. map = {target: 1, target(1): 1}, name = target
       while (map.has(newName)){
         count++;
         newName = `${name}(${count})`;
       }
-	     // Update both old name and new name in the map
+      // Update both old name and new name in the map
       map.set(name, count + 1);
       map.set(newName, 1);
     }
