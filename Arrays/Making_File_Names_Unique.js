@@ -30,7 +30,7 @@ function getFolderNames(names){
     
   for (const name of names){
     if (!map.has(name)){
-	  // Store the next available number 1
+    // Store the next available number 1
       map.set(name, 1);
     } else {
       let count = map.get(name);
@@ -51,3 +51,9 @@ function getFolderNames(names){
   // ES6 Map is LinkedHashMap so name keys are ordered when iterated 
   return [...map.keys()];
 }
+
+// Test
+console.log(getFolderNames(["pes","fifa","gta","pes(2019)"])); // ["pes","fifa","gta","pes(2019)"]
+console.log(getFolderNames(["gta","gta(1)","gta","avalon"])); // ["gta","gta(1)","gta(2)","avalon"]
+console.log(getFolderNames(["wano","wano","wano","wano"])); // ["wano","wano(1)","wano(2)","wano(3)"]
+console.log(getFolderNames(["kaido","kaido(1)","kaido","kaido(1)"])); // ["kaido","kaido(1)","kaido(2)","kaido(1)(1)"]
