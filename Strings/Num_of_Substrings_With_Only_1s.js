@@ -21,8 +21,14 @@
  Explanation: Each substring contains only 1's characters.
 */
 
-// OPTION 2
-const numSub = s =>
-  s
-    .split('0')
-    .reduce((cnt, { length: len }) => cnt + (len * (len + 1)) / 2, 0) % (10 ** 9 + 7);
+// OPTION 1
+function numSub(s){
+  let ones = s.split('0').filter(x => x.length > 0),
+      mod = 10**9 + 7;
+  let count = 0;
+  for (let one of ones){
+    let n = one.length;
+    count = count + Math.floor((n*(n+1))/2);
+  }
+  return count % mod;
+}
