@@ -32,3 +32,20 @@ function numSub(s){
   }
   return count % mod;
 }
+
+// OPTION 2
+function numSub(s){
+  let res = 0, cur = 0;
+  for (let i = 0; i < s.length; i++){
+    if (s[i] == '0'){
+      if (cur > 0) 
+        res += (cur+1) * cur / 2;
+      cur = 0;
+     } else {
+       cur++;
+     }
+   }
+   if (cur > 0)
+     res += (cur+1) * cur / 2;
+   return res % (Math.pow(10, 9) + 7);
+}
