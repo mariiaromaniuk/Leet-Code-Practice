@@ -20,3 +20,9 @@
  Output: 21
  Explanation: Each substring contains only 1's characters.
 */
+
+// OPTION 2
+const numSub = s =>
+  s
+    .split('0')
+    .reduce((cnt, { length: len }) => cnt + (len * (len + 1)) / 2, 0) % (10 ** 9 + 7);
