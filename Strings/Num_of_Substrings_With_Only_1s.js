@@ -49,3 +49,9 @@ function numSub(s){
      res += (cur+1) * cur / 2;
    return res % (Math.pow(10, 9) + 7);
 }
+
+// Test
+console.log(numSub("0110111")); // 9
+console.log(numSub("101")); // 2
+console.log(numSub("111111")); // 21
+console.log(numSub("000")); // 0
