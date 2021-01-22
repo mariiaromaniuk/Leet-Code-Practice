@@ -5,7 +5,8 @@
  Approach:
  Since we know that all the elements are in the range [1, N]. We will be treating numbers 
  in the array as indices and mark corresponding locations in the array as negative. 
- Ex, if we encounter 4, we will negate the number at index 3 (because the array is zero-indexed).
+ 
+ Example: if we encounter 4, we will negate the number at index 3 (because the array is zero-indexed).
  • For each element nums[i], mark the element at the corresponding location negative if it's not 
    already marked so i.e. nums[\; nums[i] \;- 1\;] \times -1nums[nums[i]−1]×−1 .
  • Now, loop over numbers from 1 \cdots N1⋯N and for each number check if nums[j] is negative. 
