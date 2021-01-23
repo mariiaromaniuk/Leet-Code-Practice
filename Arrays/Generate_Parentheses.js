@@ -4,16 +4,16 @@ Input: n = 3
 Output: ["((()))","(()())","(())()","()(())","()()()"]
 
 Approach:
- • Backtracking and keep track of number of opening and closing brackets have been used 
+ - Backtracking and keep track of number of opening and closing brackets have been used 
    either by incrementing or decrementing.
- • You know you can only start with an opening: (
- • At this point, you have 2 options: add more ( or now you can add ) to close it.
- • When can you add more (? Whenever you haven't used up all the n openings. 
+ - You know you can only start with an opening: (
+ - At this point, you have 2 options: add more ( or now you can add ) to close it.
+ - When can you add more (? Whenever you haven't used up all the n openings. 
    n pairs = n openings and n closings.
- • When can you add more )? Whenever you have more openings than closings.
- • When can you add the combination to the list? When the string you've generated hits 2*n 
+ - When can you add more )? Whenever you have more openings than closings.
+ - When can you add the combination to the list? When the string you've generated hits 2*n 
    length or there's no more opening or closing left.
- • If you just do it by hands, you'll have something like this:
+ - If you just do it by hands, you'll have something like this:
 
 Remember: you can either add more closing or opening if you're still within the constraints:
 '('->'()'->'()('->'()()'->'()()('=>'()()()'
