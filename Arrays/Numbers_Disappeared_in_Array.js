@@ -7,11 +7,11 @@
  in the array as indices and mark corresponding locations in the array as negative. 
  
  Example: if we encounter 4, we will negate the number at index 3 (because the array is zero-indexed).
- • For each element nums[i], mark the element at the corresponding location negative if it's not 
+ - For each element nums[i], mark the element at the corresponding location negative if it's not 
    already marked so i.e. nums[\; nums[i] \;- 1\;] \times -1nums[nums[i]−1]×−1 .
- • Now, loop over numbers from 1 \cdots N1⋯N and for each number check if nums[j] is negative. 
+ - Now, loop over numbers from 1 \cdots N1⋯N and for each number check if nums[j] is negative. 
    If it is negative, that means we've seen this number somewhere in the array.
- • Add all the numbers to the resultant array which don't have their corresponding locations 
+ - Add all the numbers to the resultant array which don't have their corresponding locations 
    marked as negative in the original array.
 */
 
