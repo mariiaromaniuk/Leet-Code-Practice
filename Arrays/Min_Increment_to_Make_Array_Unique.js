@@ -9,8 +9,8 @@
  the increments of duplicated 1s. We could take three ones (taken = [1, 1, 1]) and continue processing. 
  When we find an empty place like 2, 4, or 6, we can then recover that our increment will be 2-1, 4-1, and 6-1.
  Count the values. For each possible value x:
- • If there are 2 or more values x in A, save the extra duplicated values to increment later.
- • If there are 0 values x in A, then a saved value v gets incremented to x.
+ - If there are 2 or more values x in A, save the extra duplicated values to increment later.
+ - If there are 0 values x in A, then a saved value v gets incremented to x.
 */
 
 // OPTION 1 --> Time: O(n), Space: O(n)
