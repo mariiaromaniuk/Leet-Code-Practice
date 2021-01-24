@@ -34,8 +34,7 @@ function getFolderNames(names){
       map.set(name, 1);
     } else {
       let count = map.get(name);
-      let newName = `${name}(${count})`;  
-	  
+      let newName = `${name}(${count})`; 
       // Find the next available number because the new file name with () may have already been taken
       // e.g. map = {target: 1, target(1): 1}, name = target
       while (map.has(newName)){
@@ -47,7 +46,6 @@ function getFolderNames(names){
       map.set(newName, 1);
     }
   }  
-    
   // ES6 Map is LinkedHashMap so name keys are ordered when iterated 
   return [...map.keys()];
 }
