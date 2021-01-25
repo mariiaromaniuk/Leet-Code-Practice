@@ -21,3 +21,19 @@
  Output: 1
  Explanation: Root is considered as good.
 */
+
+function goodNodes(root){
+  if (!root) return 0;
+  let good = 0;
+  function dfs(node, lmax){
+    if (node.left) 
+      dfs(node.left, Math.max(lmax, node.val));
+    if (node.val >= lmax) 
+      good++;
+    if (node.right) 
+      dfs(node.right, Math.max(lmax, node.val));
+    return;
+  }
+  dfs(root, -Infinity);
+  return good;
+}
