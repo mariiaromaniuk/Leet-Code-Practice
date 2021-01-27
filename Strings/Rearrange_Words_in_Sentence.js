@@ -40,3 +40,6 @@ const arrangeWords = text => {
   }
   return ret[0].toUpperCase() + ret.slice(1, -1);
 };
+
+// Test
+console.log(arrangeWords("To be or not to be")); // "To be or to be not"
