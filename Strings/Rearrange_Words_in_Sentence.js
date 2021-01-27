@@ -42,4 +42,6 @@ const arrangeWords = text => {
 };
 
 // Test
+console.log(arrangeWords("Leetcode is cool")); // "Is cool leetcode"
+console.log(arrangeWords("Keep calm and code on")); // "On and keep calm code"
 console.log(arrangeWords("To be or not to be")); // "To be or to be not"
