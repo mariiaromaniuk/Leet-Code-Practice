@@ -23,6 +23,7 @@
  Explanation: For k = 19 we can use 1 + 5 + 13 = 19.
 */
 
+// Time: O(n), Space: O(n)
 function findMinFibonacciNumbers(k) {
   let sequence = [1, 1], sum = sequence[0] + sequence[1];
   let i = 2;
@@ -32,8 +33,9 @@ function findMinFibonacciNumbers(k) {
     sum = sequence[i-1]+sequence[i-2];
   }
   let j = sequence.length-1, res = 0;
-  while (k) {
-    if (k >= sequence[j]) k -= sequence[j], res++;
+  while (k){
+    if (k >= sequence[j]) 
+      k -= sequence[j], res++;
     j--;
   }
   return res;
