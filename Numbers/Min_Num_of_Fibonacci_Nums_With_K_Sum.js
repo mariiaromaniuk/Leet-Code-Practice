@@ -43,3 +43,5 @@ function findMinFibonacciNumbers(k){
 
 // Test
 console.log(findMinFibonacciNumbers(7)); // 2
+console.log(findMinFibonacciNumbers(10)); // 2
+console.log(findMinFibonacciNumbers(19)); // 3
