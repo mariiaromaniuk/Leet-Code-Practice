@@ -24,7 +24,7 @@
 */
 
 // Time: O(n), Space: O(n)
-function findMinFibonacciNumbers(k) {
+function findMinFibonacciNumbers(k){
   let sequence = [1, 1], sum = sequence[0] + sequence[1];
   let i = 2;
   while (sum <= k){
@@ -40,3 +40,6 @@ function findMinFibonacciNumbers(k) {
   }
   return res;
 }
+
+// Test
+console.log(findMinFibonacciNumbers(7)); // 2
