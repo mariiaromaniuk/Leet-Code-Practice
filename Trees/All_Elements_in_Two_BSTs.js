@@ -9,14 +9,6 @@
  Example 2:
  Input: root1 = [0,-10,10], root2 = [5,1,7,0,2]
  Output: [-10,0,0,1,2,5,7,10]
-
- Example 3:
- Input: root1 = [], root2 = [5,1,7,0,2]
- Output: [0,1,2,5,7]
- 
- Example 4:
- Input: root1 = [0,-10,10], root2 = []
- Output: [-10,0,10]
 */
 
 // To convert a binary search tree to an ordered array, we use inorder traversal.
