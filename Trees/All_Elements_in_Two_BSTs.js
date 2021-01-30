@@ -69,4 +69,5 @@ console.log(getAllElements([2,1,4], [1,0,3])); // [0,1,1,2,3,4]
 console.log(getAllElements([0,-10,10], [5,1,7,0,2])); // [-10,0,0,1,2,5,7,10]
 console.log(getAllElements([], [5,1,7,0,2])); // [0,1,2,5,7]
 console.log(getAllElements([0,-10,10], [])); // [-10,0,10]
+console.log(getAllElements([1,null,8], [8,1])); // [1,1,8,8]
 
