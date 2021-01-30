@@ -63,3 +63,6 @@ const merge = (arr1, arr2) => {
   return ret;
 };
 const getAllElements = (root1, root2) => merge(traversal(root1), traversal(root2));
+
+// Test
+console.log(getAllElements([2,1,4], [1,0,3])); // [0,1,1,2,3,4]
