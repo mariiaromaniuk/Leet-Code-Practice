@@ -16,3 +16,47 @@
  Input: arr = [-1,-2], k = 7
  Output: 0
 */
+
+// OPTION 1
+var kConcatenationMaxSum = function(arr, k) {
+
+    // values to calculate the maximum sum taking all values from the left and right
+    let maxSumFromRight = 0;
+    let maxSumFromLeft = 0;
+    let rightSum = 0;
+    let leftSum = 0;
+	
+	// values to calculate the max sub array sum
+    let sum = 0;
+    let maxSubArraySum = 0;
+    let min = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+	
+	    // calculate the maximum sum iterating from the left and the right
+        leftSum += arr[i];
+        maxSumFromLeft = Math.max(maxSumFromLeft, leftSum);
+        rightSum += arr[arr.length - i - 1];
+        maxSumFromRight = Math.max(maxSumFromRight, rightSum);
+        
+
+        // calculate the sum and max subarray sum
+        sum += arr[i];
+        maxSubArraySum = Math.max(maxSubArraySum, sum - min);
+        min = Math.min(min, sum);
+    }
+	
+	// if we only can use this one array then the best we can do is the max subArray Sum
+    if (k === 1) return maxSubArraySum;
+
+    // calculate the best joining only 2 arrays
+    const bestWithTwoArrays = maxSumFromRight + maxSumFromLeft;
+	
+	// only for this challenge *see prompt
+    const mod = 1000000007;        
+
+    // we calculate the best by filling in the remaining unused arrays in the middle
+	const bestWithTwoArrayscombinedWithRemainingArraySum = bestWithTwoArrays + (sum * (k - 2)) % mod
+	
+    return Math.max(maxSubArraySum, bestWithTwoArrays, bestWithTwoArrayscombinedWithRemainingArraySum)
+};
