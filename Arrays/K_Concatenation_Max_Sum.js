@@ -28,8 +28,7 @@ var kConcatenationMaxSum = function(arr, k) {
     let min = 0;
 
     for (let i = 0; i < arr.length; i++) {
-	
-	    // calculate the maximum sum iterating from the left and the right
+        // calculate the maximum sum iterating from the left and the right
         leftSum += arr[i];
         maxSumFromLeft = Math.max(maxSumFromLeft, leftSum);
         rightSum += arr[arr.length - i - 1];
@@ -68,13 +67,13 @@ var kConcatenationMaxSum = function(arr, k) {
     // max longest Sequence - maxLongest, 
     // in the end - longest - will be the longest sum for the last item ( we will use it that in concatenation ) 
     
-    for(let i=0; i<arr.length; i++) {
+    for (let i=0; i<arr.length; i++) {
         totalSum += arr[i];
-        if(totalSum > maxTotalSum) {
+        if (totalSum > maxTotalSum) {
             maxTotalSum = totalSum;
         }
         longest += arr[i];
-        if(longest < 0) {
+        if (longest < 0) {
             longest = 0;
         } else if(maxLongest < longest) {
             maxLongest = longest;   
@@ -88,21 +87,21 @@ var kConcatenationMaxSum = function(arr, k) {
         
          // if at the end we have positive sum that we can try to concat with the start of array,
 		 // and potentionally to get bigger maxLongest  ( e.g. [1, -2, 1])
-        if(longest > 0) {
+        if (longest > 0) {
             let previousLongest = longest;
             // iterate again from the start of array, but having longest value from the last item of previous iteration
-            for(let i=0; i<arr.length; i++) {
+            for (let i=0; i<arr.length; i++) {
                 longest += arr[i];
-                if(longest <= 0) { // if it will be less then 0 - it means that sequence is over
+                if (longest <= 0) { // if it will be less then 0 - it means that sequence is over
                     break;
-                } else if(maxLongest < longest) {
+                } else if (maxLongest < longest) {
                     maxLongest = longest;   
                 }
             }
             
             // if at the end of second iteration we have bigger last sequence comparing to previous iteration - we found increasing pattern.
             // So longest - is already result after second iteration, and for last iteration we must use maxTotalSum. So calculate for the rest k-3
-            if(longest > previousLongest) { 
+            if (longest > previousLongest) { 
                 let diff = longest - previousLongest;
                 maxLongest = longest+((k-3)*diff)+maxTotalSum;
             }
