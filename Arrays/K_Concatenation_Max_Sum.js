@@ -11,10 +11,6 @@
  Example 2:
  Input: arr = [1,-2,1], k = 5
  Output: 2
-[1,2], k = 3
- Example 3:
- Input: arr = [-1,-2], k = 7
- Output: 0
 */
 
 // OPTION 1
