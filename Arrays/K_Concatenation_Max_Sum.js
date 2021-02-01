@@ -11,7 +11,7 @@
  Example 2:
  Input: arr = [1,-2,1], k = 5
  Output: 2
-
+[1,2], k = 3
  Example 3:
  Input: arr = [-1,-2], k = 7
  Output: 0
@@ -84,10 +84,9 @@ var kConcatenationMaxSum = function(arr, k) {
             maxLongest = longest;   
         }
     }
-    
-
+   
     // if k is 1 - no need to concat, maxLongest is the result
-    if(k === 1) {
+    if (k === 1){
         return maxLongest;
     } else  {
         
@@ -113,6 +112,10 @@ var kConcatenationMaxSum = function(arr, k) {
             }
         } 
     }
-
     return maxLongest % (10**9+7);
 };
+
+// Test
+console.log(kConcatenationMaxSum([1,2], 3)); // 9
+console.log(kConcatenationMaxSum([1,-2,1], 5)); // 2
+console.log(kConcatenationMaxSum([-1,-2], 7)); // 0
